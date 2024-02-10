@@ -1,0 +1,18 @@
+{
+  "name": "home/phpiggy",
+  "description": "A PHP application for tracking expenses.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "RoJaebl",
+      "email": "qgs0924@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "src/Framework",
+      "App\\": "src/App"
+    }
+  }
+}
