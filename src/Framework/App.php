@@ -8,7 +8,6 @@ class App
 {
     private Router $router;
     private Container $container;
-
     public function __construct(string $containerDefinitionsPath = null)
     {
         $this->router = new Router();
@@ -19,7 +18,6 @@ class App
             $this->container->addDefinitions($containerDefinitions);
         }
     }
-
     public function run()
     {
         $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
@@ -27,9 +25,12 @@ class App
 
         $this->router->dispatch($path, $method, $this->container);
     }
-
     public function get(string $path, array $controller)
     {
         $this->router->add("GET", $path, $controller);
+    }
+    public function addMiddleware(string $middleware)
+    {
+        $this->router->addMiddleware($middleware);
     }
 }
