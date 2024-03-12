@@ -2,12 +2,13 @@
 
 <section class="max-w-2xl mx-auto mt-12 p-4 bg-white shadow-md border border-gray-200 rounded">
   <form method="POST" class="grid grid-cols-1 gap-6">
+    <?php include $this->resolve("partials/_header.php"); ?>
     <!-- Email -->
     <label class="block">
       <span class="text-gray-700">Email address</span>
       <input value="<?php echo e($oldFormData["email"] ?? ''); ?>" name="email" type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="john@example.com" />
       <?php if (array_key_exists("email", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["email"][0]); ?>
         </div>
       <?php endif; ?>
@@ -17,7 +18,7 @@
       <span class="text-gray-700">Age</span>
       <input value="<?php echo e($oldFormData["age"] ?? ''); ?>" name="age" type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
       <?php if (array_key_exists("age", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["age"][0]); ?>
         </div>
       <?php endif; ?>
@@ -32,7 +33,7 @@
         <option value="Invalid">Invalid Country</option>
       </select>
       <?php if (array_key_exists("country", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["country"][0]); ?>
         </div>
       <?php endif; ?>
@@ -42,7 +43,7 @@
       <span class="text-gray-700">Social Media URL</span>
       <input value="<?php echo e($oldFormData["socialMediaURL"] ?? ''); ?>" name="socialMediaURL" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
       <?php if (array_key_exists("socialMediaURL", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["socialMediaURL"][0]); ?>
         </div>
       <?php endif; ?>
@@ -52,7 +53,7 @@
       <span class="text-gray-700">Password</span>
       <input name="password" type="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
       <?php if (array_key_exists("password", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["password"][0]); ?>
         </div>
       <?php endif; ?>
@@ -62,7 +63,7 @@
       <span class="text-gray-700">Confirm Password</span>
       <input name="confirmPassword" type="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="" />
       <?php if (array_key_exists("confirmPassword", $errors)) : ?>
-        <div class="gb-gray-100 mt-2 p-2 text-red-500">
+        <div class="bg-gray-100 mt-2 p-2 text-red-500">
           <?php echo e($errors["confirmPassword"][0]); ?>
         </div>
       <?php endif; ?>
@@ -75,7 +76,7 @@
             <input <?php echo $oldFormData["tos"] ?? false ? "checked" : ""; ?> name="tos" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" />
             <span class="ml-2">I accept the terms of service.</span>
             <?php if (array_key_exists("tos", $errors)) : ?>
-              <div class="gb-gray-100 mt-2 p-2 text-red-500">
+              <div class="bg-gray-100 mt-2 p-2 text-red-500">
                 <?php echo e($errors["tos"][0]); ?>
               </div>
             <?php endif; ?>
